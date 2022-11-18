@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Erp" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-BG4VAHB\SQLEXPRESS;Initial Catalog=Erp;User ID=sa;Connect Timeout=180" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ErpConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Utilisateur" Member="Utilisateur">
+    <Type Name="Utilisateur">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entreprise" Member="Entreprise">
+    <Type Name="Entreprise">
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="site" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ville" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pays" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="adresse2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AjoutEntreprise" Method="AjoutEntreprise">
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ville" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="pays" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="adresse" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="adresse2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="code_postal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="telephone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="site" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteEntreprise" Method="DeleteEntreprise">
+    <Parameter Name="id_entreprise" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectEntreprises" Method="SelectEntreprises">
+    <ElementType Name="SelectEntreprisesResult">
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="site" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ville" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pays" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="adresse2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateEntreprise" Method="UpdateEntreprise">
+    <Parameter Name="id_entreprise" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ville" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="pays" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="adresse" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="adresse2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="code_postal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="telephone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="site" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetEntreprisesByID" Method="GetEntreprisesByID">
+    <Parameter Name="id_entreprise" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetEntreprisesByIDResult">
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="site" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ville" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pays" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="adresse2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="code_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateUtilistateur" Method="UpdateUtilistateur">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectUtilisateur" Method="SelectUtilisateur">
+    <ElementType Name="SelectUtilisateurResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AjoutUtilisateur" Method="AjoutUtilisateur">
+    <Parameter Name="Nom" Parameter="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteUtilisateur" Method="DeleteUtilisateur">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

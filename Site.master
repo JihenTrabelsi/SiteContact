@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+<%@ Register Assembly="DevExpress.Web.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<%@ Register TagPrefix="popupWin" TagName="popupWin" Src="poupup.ascx" %>
+<!DOCTYPE html>
+
+<html lang="fr">
+<head runat="server">
+ 
+        <link rel="icon" type="image/png" sizes="16x16" href="~/Image/medical-doctor-30.png">
+
+
+    <script type="text/javascript">
+
+        function SetSplitterPane(ctrl) {
+            
+            window.frames['ifrDetails'].location.href = ctrl;
+
+            
+        }
+
+
+        function popup(url, height, width, title) {
+            popupWind.SetSize(height, width);
+            popupWind.SetHeaderText(title);
+            popupWind.SetContentUrl(url);
+            popupWind.Show();
+
+        }
+    </script>
+
+</head>
+<body>
+    <form runat="server">
+        <popupWin:popupWin ID="popupWin" runat="server" />
+     <%--   <dx:ASPxRibbon ID="Ribbon" ClientInstanceName="Ribbon" runat="server" Width="100%" ShowGroupLabels="false" ShowFileTab="false" ShowTabs="false" Theme="Glass">
+                    <Styles>
+                        <Item Width="100px"></Item>
+                        <GroupExpandButton Width="100px"></GroupExpandButton>
+                    </Styles>
+                    <Tabs>
+                        <dx:RibbonTab Text="Menu">
+                            <Groups>
+                                <dx:RibbonGroup>
+                                    <Items>
+                                        <dx:RibbonButtonItem Text="liste des entreprises" Size="Large" NavigateUrl="ListeEntreprise.aspx">
+                                            <LargeImage Url="Image/GMAO/company-100.png"></LargeImage>
+                                        </dx:RibbonButtonItem>
+                                    </Items>
+                                </dx:RibbonGroup>
+
+                                <dx:RibbonGroup>
+                                    <Items>
+                                        <dx:RibbonButtonItem Text="Les événements" Size="Large" NavigateUrl="Agenda.aspx">
+                                            <LargeImage Url="Image/GMAO/schedule.png"></LargeImage>
+                                        </dx:RibbonButtonItem>
+                                    </Items>
+                                </dx:RibbonGroup>
+                            </Groups>
+                        </dx:RibbonTab>
+                    </Tabs>
+                </dx:ASPxRibbon>
+      --%>
+
+        
+        <div class="container body-content">
+          <%--  <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />--%>
+
+
+            <div id="body">
+       
+
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" >
+
+            </asp:ContentPlaceHolder >
+            <section class="content-wrapper">
+                <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1" />
+            </section>
+        </div>
+
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Contact </p>
+            </footer>
+        </div>
+    
+    
+    
+    </form>
+
+
+
+
+</body>
+</html>

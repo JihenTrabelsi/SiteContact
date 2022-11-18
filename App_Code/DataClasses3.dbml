@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Erp" Class="DataClasses3DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-BG4VAHB\SQLEXPRESS;Initial Catalog=Erp;User ID=sa;Connect Timeout=180" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ErpConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Contact" Member="Contact">
+    <Type Name="Contact">
+      <Column Name="id_contact" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="civilite" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fonction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AjouterContact" Method="AjouterContact">
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="prenom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="civilite" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="telephone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fonction" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id_entreprise" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteContact" Method="DeleteContact">
+    <Parameter Name="id_contact" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetContactsByID" Method="GetContactsByID">
+    <Parameter Name="id_contact" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetContactsByIDResult">
+      <Column Name="id_contact" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="civilite" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fonction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetContactsByIDEnt" Method="GetContactsByIDEnt">
+    <Parameter Name="id_entreprise" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetContactsByIDEntResult">
+      <Column Name="id_contact" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="civilite" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fonction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectContacts" Method="SelectContacts">
+    <ElementType Name="SelectContactsResult">
+      <Column Name="id_contact" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="civilite" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fonction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_entreprise" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateContacts" Method="UpdateContacts">
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="prenom" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="civilite" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="telephone" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fonction" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id_entreprise" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_contact" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

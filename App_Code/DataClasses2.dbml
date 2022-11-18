@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Erp" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-BG4VAHB\SQLEXPRESS;Initial Catalog=Erp;User ID=sa;Connect Timeout=180" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ErpConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Event" Member="Event">
+    <Type Name="Event">
+      <Column Name="id_event" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="objet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date_debut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_fin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="heure_debut" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="heure_fin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="attribu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_utilisateur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_contact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DeleteEvents" Method="DeleteEvents">
+    <Parameter Name="id_event" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectEvents" Method="SelectEvents">
+    <ElementType Name="SelectEventsResult">
+      <Column Name="id_event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="objet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date_debut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_fin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="heure_debut" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="heure_fin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="attribu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_contact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AjouterEvent" Method="AjouterEvent">
+    <Parameter Name="type" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="objet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="date_debut" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="date_fin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="heure_debut" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="heure_fin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="attribu" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="lieu" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id_utilisateur" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_contact" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateEvents" Method="UpdateEvents">
+    <Parameter Name="id_event" Type="System.Int32" DbType="Int" />
+    <Parameter Name="type" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="objet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="date_debut" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="date_fin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="heure_debut" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="heure_fin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="attribu" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="lieu" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id_utilisateur" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_contact" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetEventByIDContact" Method="GetEventByIDContact">
+    <Parameter Name="id_contact" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetEventByIDContactResult">
+      <Column Name="id_event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="objet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date_debut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_fin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="heure_debut" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="heure_fin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="attribu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_utilisateur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_contact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

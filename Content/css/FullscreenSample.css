@@ -1,0 +1,69 @@
+﻿html, body, form {
+	height: 100%;
+	margin: 0;
+}
+
+
+
+.logo {
+	color: #ffd215;
+	float: left;
+	margin-left: 10px;
+    
+}
+
+.header {
+	line-height: 36px;
+	top: -19px;
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	font-family: Arial;
+	color: #fff;
+	border: none 0px #0000;
+	height: 25px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.text {
+    font-size: 25px;
+    font-family: Gugi;
+    margin: 45px 8px;
+}
+
+.navigation {
+	float: right;
+	margin-right: 10px;
+}
+ 
+	.navigation > .text {
+		color: #fff;
+		float: right;
+		cursor: pointer;
+	}
+
+/* ASPxImageSlider styles */
+/*
+.dxWeb_isDot,
+.dxWeb_isDotSelected {
+	background-image: url();
+}
+
+.dxisControl .dxis-nbDotItem {
+	width: 50px;
+	height: 5px;
+	background-color: #fff;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=88);
+	opacity: 0.45;
+}
+
+.dxisControl .dxis-nbDotItemSelected {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=100) !important;
+	opacity: 1 !important;
+}
+
+.dxisControl .dxis-nbDotsBottom {
+	margin-top: -75px;
+}
+*/

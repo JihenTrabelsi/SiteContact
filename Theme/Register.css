@@ -1,0 +1,49 @@
+﻿        @media only screen and (max-width: 479px) {
+            .card-container.card {
+            max-width: 99%;
+             min-width: 300px;
+           }
+        }
+         @media only screen and (min-width: 480px) and (max-width: 767px) {
+            .card-container.card {
+            max-width: 90%;
+             min-width: 300px;
+           }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 990px) {
+            .card-container.card {
+            max-width: 50%;
+             min-width: 300px;
+           }
+        }
+        @media only screen and (min-width: 991px) {
+            .card-container.card {
+            max-width: 60%;
+             min-width: 300px;
+        }
+        }
+ /*
+ * Card component
+ */
+
+        .card {
+            box-shadow: 1px 0px 2px 2px rgb(0 0 0 / 10%);
+            padding: 1px 25px 30px;
+            margin: 0 auto 25px;
+            background-color: transparent;
+            backdrop-filter: blur(3px);
+        }
+
+.button {
+    color :#accbe9;
+    Width:400px;
+    Height:50px;
+    font-style:normal;
+    Font-Size:Medium;
+    border-color:#accbe9;
+}
+
+    .button:hover {
+        color: #5c86af;
+        border-color: #5c86af;
+    }
